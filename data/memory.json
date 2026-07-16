@@ -422,5 +422,29 @@
     {
         "role": "assistant",
         "content": "The current weather in Delhi is quite warm, with a temperature of 32.9°C and a wind speed of 2.4 km/h."
+    },
+    {
+        "role": "user",
+        "content": "QR GENRATE \"DFJDF"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n    \"tool\": \"qrcode\",\n    \"text\": \"DFJDF\"\n}"
+    },
+    {
+        "role": "user",
+        "content": "TIME"
+    },
+    {
+        "role": "assistant",
+        "content": "The current time is 17-07-2026 12:23:55 AM."
+    },
+    {
+        "role": "user",
+        "content": "WEter "
+    },
+    {
+        "role": "assistant",
+        "content": "{\n    \"tool\": \"weather\",\n    \"city\": \"Delhi\"\n}"
     }
 ]

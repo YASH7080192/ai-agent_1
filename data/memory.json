@@ -1,1 +1,50 @@
-[]
+[
+    {
+        "role": "user",
+        "content": "leetcode karo 12"
+    },
+    {
+        "role": "assistant",
+        "content": "My name is Yashvant AI Agent. \nI was developed by Yashvant Giri. \nI was built using Python, Streamlit and Groq API. \nI can perform: \n- Mathematical Calculations \n- Weather Information \n- Current Date & Time \n- Currency Conversion \n- QR Code Generation"
+    },
+    {
+        "role": "user",
+        "content": "delhi weather "
+    },
+    {
+        "role": "assistant",
+        "content": "The current weather in Delhi is 27.6°C with a wind speed of 8.0 km/h."
+    },
+    {
+        "role": "user",
+        "content": "hello"
+    },
+    {
+        "role": "assistant",
+        "content": "My name is Yashvant AI Agent. \nI was developed by Yashvant Giri. \nI was built using Python, Streamlit and Groq API. \nI can perform: \n- Mathematical Calculations \n- Weather Information \n- Current Date & Time \n- Currency Conversion \n- QR Code Generation"
+    },
+    {
+        "role": "user",
+        "content": "tum ko kis ne banaya"
+    },
+    {
+        "role": "assistant",
+        "content": "My name is Yashvant AI Agent.\nI was developed by Yashvant Giri.\nI was built using Python, Streamlit and Groq API.\nI can perform: \n- Mathematical Calculations \n- Weather Information \n- Current Date & Time \n- Currency Conversion \n- QR Code Generation"
+    },
+    {
+        "role": "user",
+        "content": "helo"
+    },
+    {
+        "role": "assistant",
+        "content": "hello"
+    },
+    {
+        "role": "user",
+        "content": "tum ko kisne banaya"
+    },
+    {
+        "role": "assistant",
+        "content": "Mujhe Yashvant Giri ne banaya."
+    }
+]

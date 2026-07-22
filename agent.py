@@ -8,7 +8,41 @@ from tools.registry import execute_tool
 class Agent:
 
     def run(self, user_input: str):
+  
+        # -----------------------------
+        # Developer Identity Check
+        # -----------------------------
+        question = user_input.lower().strip()
 
+        identity_questions = [
+            "who created you",
+            "who made you",
+            "who developed you",
+            "who generated you",
+            "who built you",
+            "who is your developer",
+            "who is your creator",
+            "what is your name",
+            "introduce yourself",
+            "tell me about yourself",
+            "tumhe kisne banaya",
+            "tumhara naam kya hai",
+            "tumhara naam",
+            "aapka naam",
+            "aap kaun ho",
+            "tum kaun ho"
+        ]
+
+        if question in identity_questions:
+            return (
+                "👋 My name is Yashvant AI Agent.\n\n"
+                "I was developed by Yashvant Giri.\n"
+                "I was built using Python, Streamlit and Groq API."
+            )
+
+        # -----------------------------
+        # Normal Processing
+        # -----------------------------
         print("\n" + "=" * 80)
         print("USER INPUT:")
         print(user_input)
@@ -18,7 +52,7 @@ class Agent:
         # Load Memory
         # -----------------------------
         memory = load_memory()
-
+        
         # Sirf last 10 messages use karo
         memory = memory[-10:]
 

@@ -8,8 +8,8 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🤖 AI Agent")
-st.caption("ChatGPT Style AI Agent")
+st.title("🤖 AI  Yashvant Agent")
+st.caption("Developed by Yashvant Giri")
 
 # -------------------------------
 # Initialize

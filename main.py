@@ -1,13 +1,22 @@
 from openai import OpenAI
-from config import API_KEY, BASE_URL, MODEL_NAME
+from config import BASE_URL, MODEL_NAME, get_api_key
 
-client = OpenAI(
-    api_key = API_KEY,
-    base_url = BASE_URL,
-)
+
+def _client() -> OpenAI:
+    api_key = get_api_key()
+    if not api_key:
+        raise RuntimeError(
+            "GROQ_API_KEY is not configured. Add it to ai-agent_1/.env "
+            "and restart Streamlit."
+        )
+
+    return OpenAI(
+        api_key=api_key,
+        base_url=BASE_URL,
+    )
 
 def chat(messages: list) -> str:
-    response = client.chat.completions.create(
+    response = _client().chat.completions.create(
         model = MODEL_NAME,
         messages = messages,
         temperature = 0

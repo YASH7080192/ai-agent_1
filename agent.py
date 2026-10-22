@@ -1,4 +1,6 @@
 from main import chat
+from config import get_api_key
+from openai import OpenAIError
 from memory import load_memory, save_memory
 from prompts import SYSTEM_PROMPT
 from parse import parse_tool_call
@@ -6,6 +8,13 @@ from tools.registry import execute_tool
 
 
 class Agent:
+
+    @staticmethod
+    def _demo_response() -> str:
+        return (
+            "Demo Mode is active. Add a valid GROQ_API_KEY to "
+            "ai-agent_1/.env to enable real AI responses."
+        )
 
     def run(self, user_input: str):
   
@@ -39,6 +48,9 @@ class Agent:
                 "I was developed by Yashvant Giri.\n"
                 "I was built using Python, Streamlit and Groq API."
             )
+
+        if not get_api_key():
+            return self._demo_response()
 
         # -----------------------------
         # Normal Processing
@@ -85,7 +97,10 @@ class Agent:
         # -----------------------------
         # Ask LLM
         # -----------------------------
-        llm_response = chat(messages)
+        try:
+            llm_response = chat(messages)
+        except (OpenAIError, RuntimeError):
+            return self._demo_response()
 
         print("\n" + "=" * 80)
         print("LLM RESPONSE:")
@@ -188,7 +203,10 @@ IMPORTANT:
             }
         )
 
-        final_response = chat(messages)
+        try:
+            final_response = chat(messages)
+        except (OpenAIError, RuntimeError):
+            return self._demo_response()
 
         print("\n" + "=" * 80)
         print("FINAL RESPONSE:")

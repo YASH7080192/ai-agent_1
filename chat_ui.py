@@ -1,6 +1,7 @@
 import os
 import streamlit as st
 from agent import Agent
+from config import get_api_key
 
 st.set_page_config(
     page_title="AI Agent",
@@ -10,6 +11,12 @@ st.set_page_config(
 
 st.title("🤖 AI  Yashvant Agent")
 st.caption("Developed by Yashvant Giri")
+
+if not get_api_key():
+    st.warning(
+        "Demo mode: `GROQ_API_KEY` is missing. Add it to "
+        "`ai-agent_1/.env` for real AI responses."
+    )
 
 # -------------------------------
 # Initialize
